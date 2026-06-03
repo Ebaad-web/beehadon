@@ -1,0 +1,619 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Beeha Ehsan ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(-45deg,#2b0000,#5a0018,#7a001f,#3b0000);
+background-size:400% 400%;
+animation:bgMove 12s ease infinite;
+overflow-x:hidden;
+color:white;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+h1{
+font-size:4rem;
+color:#fff;
+text-shadow:0 0 20px #ff4d6d;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{transform:scale(1);}
+to{transform:scale(1.05);}
+}
+
+.subtitle{
+font-size:1.5rem;
+margin-top:10px;
+color:#ffd6d6;
+}
+
+.music-btn,
+.surprise-btn{
+padding:15px 35px;
+border:none;
+border-radius:50px;
+background:#ff4d6d;
+color:white;
+font-size:18px;
+cursor:pointer;
+margin-top:25px;
+transition:.3s;
+}
+
+.music-btn:hover,
+.surprise-btn:hover{
+transform:scale(1.1);
+}
+
+.message-box{
+width:90%;
+max-width:900px;
+margin:50px auto;
+padding:35px;
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
+border-radius:25px;
+line-height:2;
+font-size:18px;
+box-shadow:0 0 25px rgba(255,255,255,.15);
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+width:90%;
+margin:auto;
+padding-bottom:50px;
+}
+
+.card{
+background:rgba(255,255,255,0.1);
+padding:25px;
+border-radius:20px;
+backdrop-filter:blur(8px);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card h3{
+margin-bottom:10px;
+}
+
+.footer{
+text-align:center;
+padding:50px 20px;
+font-size:18px;
+}
+
+.floating{
+position:fixed;
+font-size:30px;
+pointer-events:none;
+animation:floatUp linear forwards;
+}
+
+@keyframes floatUp{
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+10%{
+opacity:1;
+}
+100%{
+transform:translateY(-100px);
+opacity:0;
+}
+}
+
+.popup{
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:white;
+color:#7a001f;
+padding:30px;
+border-radius:20px;
+max-width:400px;
+text-align:center;
+z-index:9999;
+font-weight:bold;
+}
+
+.show{
+display:block;
+animation:pop .5s;
+}
+
+@keyframes pop{
+from{
+transform:translate(-50%,-50%) scale(.5);
+}
+to{
+transform:translate(-50%,-50%) scale(1);
+}
+}
+
+@media(max-width:768px){
+h1{
+font-size:2.5rem;
+}
+.subtitle{
+font-size:1.1rem;
+}
+}
+
+/* ==========================
+MEMORIES BUTTON
+========================== */
+
+.memories-btn{
+margin-left:15px;
+background:#ff85a2;
+}
+
+/* ==========================
+MEMORIES POPUP
+========================== */
+
+.memory-popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.85);
+justify-content:center;
+align-items:center;
+z-index:99999;
+padding:20px;
+}
+
+.memory-popup.show{
+display:flex;
+}
+
+.memory-box{
+width:100%;
+max-width:700px;
+background:rgba(255,255,255,.1);
+backdrop-filter:blur(15px);
+padding:25px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 0 30px rgba(255,77,109,.5);
+position:relative;
+animation:popupAnim .5s ease;
+}
+
+@keyframes popupAnim{
+from{
+transform:scale(.7);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
+}
+
+.memory-box h2{
+margin-bottom:20px;
+color:white;
+}
+
+.close-btn{
+position:absolute;
+top:15px;
+right:20px;
+font-size:24px;
+cursor:pointer;
+color:white;
+}
+
+.memory-slider{
+width:100%;
+overflow:hidden;
+position:relative;
+}
+
+.slide{
+display:none;
+}
+
+.slide.active{
+display:block;
+}
+
+.slide img,
+.slide video{
+width:100%;
+height:400px;
+object-fit:cover;
+border-radius:20px;
+box-shadow:0 0 20px rgba(255,255,255,.2);
+}
+
+.slider-controls{
+margin-top:20px;
+display:flex;
+justify-content:center;
+gap:15px;
+}
+
+.slider-controls button{
+padding:12px 25px;
+border:none;
+border-radius:50px;
+background:#ff4d6d;
+color:white;
+cursor:pointer;
+font-size:18px;
+transition:.3s;
+}
+
+.slider-controls button:hover{
+transform:scale(1.1);
+}
+
+/* Mobile Responsive */
+
+@media(max-width:768px){
+
+.slide img,
+.slide video{
+height:280px;
+}
+
+.memory-box{
+padding:15px;
+}
+
+.memory-box h2{
+font-size:22px;
+}
+
+}
+.memory-box{
+background:linear-gradient(
+135deg,
+rgba(255,77,109,.2),
+rgba(255,255,255,.08)
+);
+border:1px solid rgba(255,255,255,.2);
+}
+
+.slide img,
+.slide video{
+height:450px;
+object-fit:cover;
+border-radius:25px;
+box-shadow:
+0 0 30px rgba(255,77,109,.5),
+0 0 60px rgba(255,77,109,.2);
+}
+
+.memory-box h2{
+font-size:32px;
+margin-bottom:25px;
+text-shadow:0 0 20px #ff4d6d;
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+
+<h1>🌹 Beeha Ehsan 🌹</h1>
+
+<p class="subtitle">
+Uff Chota Don Dimple Wala ❤️
+</p>
+
+<button class="music-btn" onclick="playMusic()">
+🎵 Play Khasara
+</button>
+
+</div>
+
+<div class="message-box">
+
+<h2>💌 A Message For You</h2>
+
+<br>
+
+<p>
+Kabhi kabhi narazgi ho jati hai,
+kabhi gussa bhi aa jata hai,
+aur kabhi kuch baatein dil ko buri lag jati hain...
+</p>
+
+<p>
+Lekin ek request hai...
+Kabhi chorne ki baat mat karna.
+</p>
+
+<p>
+Agar gussa ho to gussa kar lena.
+Agar naraz ho to narazgi bata dena.
+Agar shikayat ho to suna dena.
+</p>
+
+<p>
+Lekin door jane ki baat mat karna.
+</p>
+
+<p>
+Har problem ka solution mil kar nikal lenge.
+Har misunderstanding clear kar lenge.
+Har narazgi khatam kar lenge.
+</p>
+
+<p>
+Kyuki tum bohat special ho.
+Aur special log asani se nahi milte. ❤️
+</p>
+
+<p>
+Tumhari friendship important hai.
+Isliye promise karo ke jo bhi ho,
+baat kar ke solve karenge.
+</p>
+
+<p>
+Aur han...
+Apni dimples wali smile kabhi mat khona 😊🌹
+</p>
+
+<p>
+— From Someone Who Truly Cares ❤️
+</p>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>🌹 Special</h3>
+<p>You are one of the most special people.</p>
+</div>
+
+<div class="card">
+<h3>😊 Smile</h3>
+<p>Your smile makes everything better.</p>
+</div>
+
+<div class="card">
+<h3>💖 Friendship</h3>
+<p>True friendships are precious.</p>
+</div>
+
+<div class="card">
+<h3>✨ Important</h3>
+<p>You matter more than you know.</p>
+</div>
+
+</div>
+
+<div style="text-align:center;padding-bottom:60px;">
+
+<button class="surprise-btn" onclick="showSurprise()">
+💝 Click For Surprise
+</button>
+
+<button class="surprise-btn memories-btn" onclick="openMemories()">
+📸 Memories
+</button>
+
+</div>
+
+<div class="popup" id="popup">
+    <span
+style="
+position:absolute;
+top:10px;
+right:15px;
+cursor:pointer;
+font-size:22px;"
+onclick="closePopup()">
+✖
+</span>
+😊 No matter what happens,<br><br>
+Please keep smiling.<br><br>
+Your dimples deserve to be seen. ❤️🌹
+</div>
+<!-- Memories Popup -->
+
+<div class="memory-popup" id="memoryPopup">
+    
+
+    <div class="memory-box">
+
+        <span class="close-btn" onclick="closeMemories()">✖</span>
+
+        <h2>💖 Memories 💖</h2>
+
+        <div class="memory-slider">
+
+            <!-- Slide 1 -->
+            <div class="slide active">
+                <img src="photos/WhatsApp Image 2026-06-03 at 4.47.40 PM.jpeg" alt="">
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide">
+                <img src="photos/WhatsApp Image 2026-06-03 at 4.47.40 PM0.jpeg" alt="">
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide">
+                <img src="photos/WhatsApp Image 2026-06-03 at 4.47.42 PM.jpeg" alt="">
+            </div>
+
+            <!-- Slide 4 Video -->
+            <div class="slide">
+                <video controls>
+                    <source src="photos/WhatsApp Video 2026-06-03 at 4.47.41 PM.mp4" type="video/mp4">
+                </video>
+            </div>
+
+        </div>
+
+        <div class="slider-controls">
+
+            <button onclick="prevSlide()">⬅</button>
+
+            <button onclick="nextSlide()">➡</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="footer">
+Made By Ebaad 🤭❤️ For Beeha Ehsan / Chota Don💪💪💕
+</div>
+
+<audio id="song" loop>
+<source src="song/Khasara - djworld.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+function playMusic(){
+document.getElementById("song").play();
+}
+
+function showSurprise(){
+document.getElementById("popup").classList.add("show");
+}
+
+const icons=["❤️","🌹","✨","💕","💖"];
+
+setInterval(()=>{
+let item=document.createElement("div");
+
+item.className="floating";
+
+item.innerHTML=
+icons[Math.floor(Math.random()*icons.length)];
+
+item.style.left=Math.random()*100+"vw";
+
+item.style.animationDuration=
+(Math.random()*5+5)+"s";
+
+document.body.appendChild(item);
+
+setTimeout(()=>{
+item.remove();
+},10000);
+
+},300);
+
+/* ==========================
+MEMORIES POPUP
+========================== */
+
+function openMemories(){
+document.getElementById("memoryPopup").classList.add("show");
+}
+
+function closeMemories(){
+document.getElementById("memoryPopup").classList.remove("show");
+}
+
+let currentSlide = 0;
+
+const slides = document.querySelectorAll(".slide");
+
+function showSlide(index){
+
+slides.forEach(slide=>{
+slide.classList.remove("active");
+});
+
+slides[index].classList.add("active");
+}
+
+function nextSlide(){
+
+currentSlide++;
+
+if(currentSlide >= slides.length){
+currentSlide = 0;
+}
+
+showSlide(currentSlide);
+}
+
+function prevSlide(){
+
+currentSlide--;
+
+if(currentSlide < 0){
+currentSlide = slides.length - 1;
+}
+
+showSlide(currentSlide);
+}
+
+/* Auto Slider */
+
+setInterval(()=>{
+
+if(document.getElementById("memoryPopup").classList.contains("show")){
+
+nextSlide();
+
+}
+
+},4000);
+function closePopup(){
+document.getElementById("popup").classList.remove("show");
+}
+
+</script>
+
+</body>
+</html>
